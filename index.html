@@ -6,12 +6,21 @@
     <title>Theory Solutions | M365 Managed IT & Cloud Engineering Tucson, AZ</title>
     <meta name="description" content="Expert M365 consulting, Power Platform automation, and managed IT services for Tucson businesses. Engineering-level support for Arizona enterprise ecosystems.">
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF66WFLLH8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LF66WFLLH8');
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Theory Solutions",
-      "url": "https://theorysolutions.tech",
+      "url": "https://theory-solutions.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Tucson",
@@ -28,11 +37,6 @@
     <style>
         :root { --navy: #14223E; --slate: #5D6B7F; --azure: #0078D4; }
         body { font-family: 'Inter', sans-serif; color: #1e293b; }
-        .hexagon-logo {
-            width: 44px; height: 44px; background-color: var(--navy);
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-            display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;
-        }
         .hero-mesh {
             background-color: var(--navy);
             background-image: radial-gradient(at 0% 0%, rgba(93, 107, 127, 0.15) 0, transparent 50%), 
@@ -43,13 +47,9 @@
 <body class="bg-white">
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="hexagon-logo">Y</div>
-            <div class="leading-none text-left">
-                <span class="block text-xl font-bold tracking-tighter text-[#14223E] uppercase">Theory</span>
-                <span class="block text-[10px] font-semibold tracking-[0.3em] text-[#5D6B7F] uppercase">Solutions</span>
-            </div>
-        </div>
+        <a href="/" class="group">
+            <img src="images/logo.png" alt="Theory Solutions Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
+        </a>
         <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-gray-500">
             <a href="#about" class="hover:text-[#14223E] transition py-2">Services</a>
             <a href="#contact" class="bg-[#14223E] text-white px-5 py-2 rounded shadow-sm hover:opacity-90 transition">Contact</a>
@@ -147,28 +147,32 @@
                 <button type="submit" id="submit-btn" class="w-full bg-white text-[#14223E] font-bold py-4 rounded-lg hover:shadow-lg transition uppercase tracking-widest">
                     Submit Inquiry
                 </button>
-                <p id="result" class="text-center text-xs text-slate-300 mt-2"></p>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 px-6 border-t border-gray-100 bg-white text-center md:text-left">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <div class="hexagon-logo h-6 w-6 text-[8px]">Y</div>
-                <span class="font-bold tracking-tighter text-[#14223E] uppercase">Theory Solutions</span>
+    <footer class="py-12 px-6 border-t border-gray-100 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <img src="images/logo.png" alt="Theory Solutions Logo" class="h-8 w-auto opacity-80">
+                <p class="text-xs text-gray-400 text-center md:text-left">
+                    © 2026 Theory Solutions. Arizona Managed IT Services. <br>
+                    Engineering-Grade M365 Ecosystems.
+                </p>
             </div>
-            <p class="text-xs text-gray-400">© 2026 Theory Solutions. Arizona Managed IT Services. Tucson, AZ.</p>
-            <div class="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                <span>Tucson</span>
-                <span>Phoenix</span>
+            <div class="flex flex-col items-center md:items-end gap-4">
+                <div class="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
+                    <span>Tucson</span>
+                    <span>Phoenix</span>
+                    <span>Sierra Vista</span>
+                </div>
+                <p class="text-[10px] text-gray-300 uppercase tracking-tighter">Serving Southern Arizona since 2026</p>
             </div>
         </div>
     </footer>
 
     <script>
         const form = document.getElementById('form');
-        const result = document.getElementById('result');
         const btn = document.getElementById('submit-btn');
 
         form.addEventListener('submit', function(e) {
@@ -187,17 +191,17 @@
                 body: json
             })
             .then(async (response) => {
-                let json = await response.json();
                 if (response.status == 200) {
                     btn.innerHTML = "Message Sent!";
-                    btn.classList.add('bg-green-500', 'text-white');
+                    btn.style.backgroundColor = "#22c55e";
+                    btn.style.color = "white";
                     form.reset();
                 } else {
-                    result.innerHTML = json.message;
+                    btn.innerHTML = "Error!";
                 }
             })
             .catch(error => {
-                result.innerHTML = "Something went wrong!";
+                btn.innerHTML = "Something went wrong!";
             });
         });
     </script>
