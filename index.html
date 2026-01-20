@@ -1,209 +1,100 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theory Solutions | M365 Managed IT & Cloud Engineering Tucson, AZ</title>
-    <meta name="description" content="Expert M365 consulting, Power Platform automation, and managed IT services for Tucson businesses. Engineering-level support for Arizona enterprise ecosystems.">
+    <title>Theory Solutions | M365 Managed IT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF66WFLLH8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-LF66WFLLH8');
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Theory Solutions",
-      "url": "https://theory-solutions.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tucson",
-        "addressRegion": "AZ",
-        "addressCountry": "US"
-      },
-      "areaServed": ["Tucson", "Phoenix", "Southern Arizona"],
-      "description": "Enterprise-grade M365 ecosystem engineering, Power Platform automation, and managed IT support services."
-    }
-    </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #14223E; --slate: #5D6B7F; --azure: #0078D4; }
-        body { font-family: 'Inter', sans-serif; color: #1e293b; }
-        .hero-mesh {
-            background-color: var(--navy);
-            background-image: radial-gradient(at 0% 0%, rgba(93, 107, 127, 0.15) 0, transparent 50%), 
-                              radial-gradient(at 50% 0%, rgba(0, 120, 212, 0.1) 0, transparent 50%);
-        }
+        body { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
+        .text-brand-navy { color: #111d31; }
+        .bg-brand-navy { background-color: #111d31; }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-slate-50 text-slate-900 scroll-smooth">
 
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 px-6 py-4 flex justify-between items-center">
-        <a href="/" class="group">
-            <img src="images/logo.png" alt="Theory Solutions Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
+    <nav class="p-8 flex justify-between items-center max-w-7xl mx-auto">
+        <a href="index.html" class="flex items-center">
+            <img src="logo.png" alt="Theory Solutions" class="h-20 w-auto">
         </a>
-        <div class="flex gap-6 text-xs font-bold uppercase tracking-widest text-gray-500">
-            <a href="#about" class="hover:text-[#14223E] transition py-2">Services</a>
-            <a href="#contact" class="bg-[#14223E] text-white px-5 py-2 rounded shadow-sm hover:opacity-90 transition">Contact</a>
+        <div class="hidden md:flex space-x-10 font-bold items-center text-brand-navy">
+            <a href="services.html" class="hover:opacity-70 transition">Services</a>
+            <a href="#contact" class="px-6 py-3 bg-[#111d31] text-white rounded-xl hover:opacity-90 transition shadow-md">Start Your Audit</a>
         </div>
     </nav>
 
-    <header class="hero-mesh pt-40 pb-24 px-6 md:px-12 text-white">
-        <div class="max-w-5xl mx-auto">
-            <div class="inline-block px-3 py-1 border border-slate-500/50 rounded-full text-xs font-bold tracking-widest text-slate-300 uppercase mb-6">
-                Arizona Managed IT Excellence
-            </div>
-            <h1 class="text-4xl md:text-7xl font-bold mb-8 leading-[1.1]">
-                Engineering-Level <br><span class="text-slate-400">M365 Strategy.</span>
-            </h1>
-            <p class="text-lg md:text-2xl text-slate-300 max-w-2xl mb-12 font-light">
-                Bridging the gap between complex M365 ecosystems and business growth. Enterprise-grade architecture, automation, and security for Southern Arizona firms.
-            </p>
-            <div class="flex flex-wrap gap-5 items-center">
-                <a href="#contact" class="bg-white text-[#14223E] px-10 py-4 rounded font-bold shadow-2xl hover:bg-gray-100 transition">Get a Tenant Audit</a>
-                <span class="text-sm font-semibold text-slate-400 border-l border-slate-700 pl-5">Serving Tucson, Phoenix & Statewide</span>
-            </div>
+    <header class="py-24 px-6 max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-8 text-brand-navy tracking-tight">Expert IT Engineering for <span class="opacity-80">Arizona Businesses</span></h1>
+        <p class="text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Modernizing your workplace with secure, scalable cloud solutions. Based in Tucson and proudly servicing all of Arizona.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="#contact" class="px-10 py-5 bg-[#111d31] text-white font-bold rounded-xl shadow-xl hover:opacity-90 transition text-lg">Get Started</a>
+            <a href="services.html" class="px-10 py-5 bg-white border-2 border-slate-200 text-brand-navy font-bold rounded-xl hover:bg-slate-50 transition text-lg shadow-sm">Explore Services</a>
         </div>
     </header>
 
-    <section id="about" class="py-24 px-6 md:px-12 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16 text-center">
-                <h2 class="text-3xl font-bold text-[#14223E] mb-4">Enterprise Solutions for Local Business</h2>
-                <div class="h-1 w-20 bg-[#14223E] mx-auto"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-16 h-16 bg-gray-50 flex items-center justify-center rounded-2xl mb-6">
-                        <span class="text-3xl">🛡️</span>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-[#14223E]">Ecosystem Hardening</h3>
-                    <p class="text-gray-600 leading-relaxed text-xs">Implementation of Entra ID, Conditional Access, and Purview data protection. Engineering-level security.</p>
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-brand-navy">Risk Mitigation</h3>
+                    <p class="text-slate-600">Proactive security measures that keep your proprietary data safe and your business running without interruption.</p>
                 </div>
-                
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-16 h-16 bg-gray-50 flex items-center justify-center rounded-2xl mb-6">
-                        <span class="text-3xl">☁️</span>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-[#14223E]">Hybrid Engineering</h3>
-                    <p class="text-gray-600 leading-relaxed text-xs">Bridging on-premise infrastructure with M365 for seamless, low-risk cloud transitions.</p>
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-brand-navy">Workplace Efficiency</h3>
+                    <p class="text-slate-600">We streamline how your team works, automating repetitive tasks so your employees can finish work faster.</p>
                 </div>
-                
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-16 h-16 bg-gray-50 flex items-center justify-center rounded-2xl mb-6">
-                        <span class="text-3xl">⚡</span>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-[#14223E]">Workflow Automation</h3>
-                    <p class="text-gray-600 leading-relaxed text-xs">Leveraging Power Automate to eliminate repetitive tasks and manual data entry across your firm.</p>
-                </div>
-
-                <div class="flex flex-col items-center text-center p-8 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                    <div class="w-16 h-16 bg-gray-50 flex items-center justify-center rounded-2xl mb-6">
-                        <span class="text-3xl">💻</span>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3 text-[#14223E]">Modern Management</h3>
-                    <p class="text-gray-600 leading-relaxed text-xs">Zero-touch provisioning via Windows Autopilot and Intune automated device management.</p>
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold text-brand-navy">Cloud Scalability</h3>
+                    <p class="text-slate-600">Agile infrastructure that grows with your firm, ensuring you only pay for the resources you actually use.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6 md:px-12 bg-slate-50">
-        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center bg-[#14223E] p-8 md:p-16 rounded-3xl shadow-2xl">
-            <div class="text-white text-left">
-                <h2 class="text-3xl font-bold mb-6 italic">Ready to optimize?</h2>
-                <p class="text-slate-300 mb-6">
-                    Contact us for a discovery call or a comprehensive M365 tenant health check in Tucson.
-                </p>
-                <div class="space-y-2">
-                    <p class="text-sm font-bold text-slate-400 uppercase tracking-widest">Response within 24 hours</p>
-                    <p class="text-xs text-slate-500 uppercase tracking-tighter">M365 Ecosystem Experts</p>
-                </div>
+    <section class="py-24 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-brand-navy">About Theory Solutions</h2>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                Theory Solutions provides enterprise-grade M365 engineering tailored for growing firms across Arizona. With over six years of experience in high-scale cloud ecosystems and a focus on cybersecurity, we specialize in making technology simple, secure, and efficient. While we are rooted in Tucson, we are proud to support business communities from Phoenix to Yuma and beyond.
+            </p>
+            <div class="inline-flex items-center px-6 py-2 border border-slate-200 rounded-full text-sm font-semibold text-slate-500 uppercase tracking-widest gap-2">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                Servicing all of Arizona
             </div>
+        </div>
+    </section>
 
-            <form action="https://api.web3forms.com/submit" method="POST" id="form" class="space-y-4">
+    <section id="contact" class="py-24 max-w-4xl mx-auto px-6">
+        <div class="bg-[#111d31] rounded-[2rem] p-12 text-white shadow-2xl">
+            <h2 class="text-4xl font-bold mb-4 text-center">Schedule Your Free Discovery Call</h2>
+            <p class="mb-10 opacity-80 text-center text-lg">Let’s find the most efficient path forward for your business infrastructure.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
                 <input type="hidden" name="access_key" value="57dab395-0188-4e79-b0bd-ceaca59b3af2">
-                <input type="hidden" name="subject" value="New Lead: Theory Solutions Inquiry">
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                <input type="text" name="name" placeholder="Full Name" required 
-                    class="w-full p-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 outline-none focus:border-white transition">
-                
-                <input type="email" name="email" placeholder="Business Email" required 
-                    class="w-full p-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 outline-none focus:border-white transition">
-                
-                <textarea name="message" placeholder="Tell us about your IT environment..." required 
-                    class="w-full p-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 h-32 outline-none focus:border-white transition"></textarea>
-                
-                <button type="submit" id="submit-btn" class="w-full bg-white text-[#14223E] font-bold py-4 rounded-lg hover:shadow-lg transition uppercase tracking-widest">
-                    Submit Inquiry
-                </button>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" name="name" placeholder="Name" required class="p-5 rounded-2xl text-slate-900 w-full outline-none">
+                    <input type="email" name="email" placeholder="Email" required class="p-5 rounded-2xl text-slate-900 w-full outline-none">
+                </div>
+                <textarea name="message" placeholder="How can we help?" rows="5" required class="p-5 rounded-2xl text-slate-900 w-full outline-none"></textarea>
+                <button type="submit" class="w-full py-5 bg-white text-brand-navy font-bold rounded-2xl hover:bg-slate-50 transition text-xl shadow-lg">Submit Request</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 px-6 border-t border-gray-100 bg-white">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="flex flex-col items-center md:items-start gap-4">
-                <img src="images/logo.png" alt="Theory Solutions Logo" class="h-8 w-auto opacity-80">
-                <p class="text-xs text-gray-400 text-center md:text-left">
-                    © 2026 Theory Solutions. Arizona Managed IT Services. <br>
-                    Engineering-Grade M365 Ecosystems.
-                </p>
-            </div>
-            <div class="flex flex-col items-center md:items-end gap-4">
-                <div class="flex gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-400">
-                    <span>Tucson</span>
-                    <span>Phoenix</span>
-                    <span>Sierra Vista</span>
-                </div>
-                <p class="text-[10px] text-gray-300 uppercase tracking-tighter">Serving Southern Arizona since 2026</p>
-            </div>
-        </div>
+    <footer class="py-12 text-center text-slate-400 text-sm">
+        &copy; 2026 Theory Solutions. Arizona Managed IT Services.
     </footer>
 
-    <script>
-        const form = document.getElementById('form');
-        const btn = document.getElementById('submit-btn');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            btn.innerHTML = "Sending...";
-            const formData = new FormData(form);
-            const object = Object.fromEntries(formData);
-            const json = JSON.stringify(object);
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            })
-            .then(async (response) => {
-                if (response.status == 200) {
-                    btn.innerHTML = "Message Sent!";
-                    btn.style.backgroundColor = "#22c55e";
-                    btn.style.color = "white";
-                    form.reset();
-                } else {
-                    btn.innerHTML = "Error!";
-                }
-            })
-            .catch(error => {
-                btn.innerHTML = "Something went wrong!";
-            });
-        });
-    </script>
 </body>
 </html>
