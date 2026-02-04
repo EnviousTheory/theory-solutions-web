@@ -3,13 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const logo = document.getElementById('static-logo');
 
     if (video && logo) {
-        // Handle transition when video ends
         video.onended = function() {
             video.style.opacity = "0";
             logo.style.opacity = "1";
             setTimeout(() => { video.style.display = "none"; }, 1500);
         };
-        // Safety: If video fails to load or play, show the logo
         video.onerror = function() {
             video.style.display = "none";
             logo.style.opacity = "1";
@@ -35,7 +33,7 @@ const serviceData = {
         title: "The Automatic Office",
         tagline: "Connecting your business tools into one powerful machine.",
         why: "Automation solves the 'Day-to-Day' struggle. If your apps talk to each other, you have more time to lead your team.",
-        paymentInfo: "Automation is an investment in your time. Most projects pay for themselves within 30 days.",
+        paymentInfo: "Automation is an investment in your time. Most projects pay for themselves within 30 days of going live.",
         features: [
             { name: "No-Typing Sync", desc: "Order info moves from your website to your shipping and accounting apps automatically.", iconColor: "bg-teal-500", ui: "🔄" },
             { name: "The Urgent Alert", desc: "The system scans for keywords like 'Invoice' and alerts your phone immediately so you never miss a sale.", iconColor: "bg-sky-500", ui: "🚨" },
@@ -62,7 +60,14 @@ let currentActive = null;
 function toggleDetails(type) {
     const zone = document.getElementById('expansion-zone');
     const content = document.getElementById('expansion-content');
-    document.querySelectorAll('button[id^="btn-"]').forEach(btn => btn.classList.remove('active-btn'));
+    
+    document.querySelectorAll('button[id^="btn-"]').forEach(btn => {
+        btn.classList.remove('active-btn');
+        const label = btn.querySelector('.label-text');
+        const plus = btn.querySelector('.detail-label span:first-child');
+        if (label) label.innerText = "Click for Details";
+        if (plus) plus.innerText = "+";
+    });
 
     if (currentActive === type) {
         zone.classList.remove('open');
@@ -70,9 +75,12 @@ function toggleDetails(type) {
         return;
     }
 
-    document.getElementById(`btn-${type}`).classList.add('active-btn');
+    const activeBtn = document.getElementById(`btn-${type}`);
+    activeBtn.classList.add('active-btn');
+    activeBtn.querySelector('.label-text').innerText = "Close Details";
+    activeBtn.querySelector('.detail-label span:first-child').innerText = "−";
+    
     const data = serviceData[type];
-
     const compareHtml = data.compare ? `
         <div class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="p-6 bg-white border border-slate-200 rounded-2xl">
