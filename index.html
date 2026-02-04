@@ -15,7 +15,6 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: white; scroll-behavior: smooth; }
         .hero-gradient { background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%); min-height: 100vh; }
         
-        /* Expansion Logic */
         #expansion-zone { max-height: 0; overflow: hidden; transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; opacity: 0; }
         #expansion-zone.open { max-height: 5000px; opacity: 1; margin-top: 3rem; }
 
@@ -23,7 +22,6 @@
         .active-btn h3 { color: #0f172a !important; }
         .active-btn p { color: #64748b !important; }
 
-        /* Video to Logo Transition Styles */
         .header-visual-container { position: relative; width: 100%; max-width: 600px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
         #intro-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; z-index: 20; }
         #static-logo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 1.5s ease-in-out; z-index: 10; filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.1)); }
@@ -36,7 +34,7 @@
             
             <div class="header-visual-container mb-12">
                 <video id="intro-video" muted playsinline autoplay>
-                    <source src="Theory Solutions.mp4" type="video/mp4">
+                    <source src="theory-solutions.mp4" type="video/mp4">
                 </video>
                 <img id="static-logo" src="logo.png" alt="Theory Solutions Logo">
             </div>
@@ -51,11 +49,6 @@
             </p>
 
             <section class="max-w-5xl mx-auto">
-                <div class="mb-6 flex items-center gap-4 justify-center md:justify-start">
-                    <span class="h-px w-8 bg-slate-700"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Our Capabilities</span>
-                </div>
-                
                 <div class="p-2 md:p-4 bg-white/5 border border-white/10 rounded-[2.5rem] backdrop-blur-sm">
                     <nav class="grid grid-cols-1 md:grid-cols-3 gap-2 text-left">
                         <button id="btn-web" onclick="toggleDetails('web')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent">
@@ -88,7 +81,7 @@
                     <div class="font-bold text-lg text-slate-300 italic">01 // Support</div>
                     <div class="md:col-span-2">
                         <h4 class="font-extrabold text-xl mb-3">"Should I hire a tech support person?"</h4>
-                        <p class="text-slate-600 leading-relaxed">Full-time IT hires cost significant overhead. We provide specialized automation and infrastructure for a fraction of that cost. You get a partner, not a payroll burden.</p>
+                        <p class="text-slate-600 leading-relaxed">Full-time IT hires are overhead. We provide infrastructure for a fraction of that cost. You get a partner, not a payroll burden.</p>
                     </div>
                 </div>
                 <div class="grid md:grid-cols-3 gap-8 items-start">

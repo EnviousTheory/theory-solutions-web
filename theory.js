@@ -1,32 +1,32 @@
-// VIDEO TO LOGO TRANSITION LOGIC
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('intro-video');
     const logo = document.getElementById('static-logo');
 
     if (video && logo) {
+        // Handle transition when video ends
         video.onended = function() {
-            video.style.opacity = "0"; // Fade out video
-            logo.style.opacity = "1";  // Fade in logo
-            
-            // Optionally remove video from DOM after fade to save resources
-            setTimeout(() => {
-                video.style.display = "none";
-            }, 1500);
+            video.style.opacity = "0";
+            logo.style.opacity = "1";
+            setTimeout(() => { video.style.display = "none"; }, 1500);
+        };
+        // Safety: If video fails to load or play, show the logo
+        video.onerror = function() {
+            video.style.display = "none";
+            logo.style.opacity = "1";
         };
     }
 });
 
-// SERVICE DATA & EXPANSION LOGIC
 const serviceData = {
     web: {
         title: "Modern Web Design",
         tagline: "Websites that look like an app and load like lightning.",
-        why: "We build the 'Modern Way'—which means your site is built on a hardened system that is nearly impossible to break and requires zero monthly maintenance fees.",
+        why: "We build the 'Modern Way'—meaning your site is built on a hardened system that is nearly impossible for hackers to touch and requires zero monthly maintenance fees.",
         compare: { old: "Slow, cluttered, and easy to hack.", modern: "Clean, instant-load, and hardened security." },
         paymentInfo: "Starting fresh? We offer **0% interest monthly payment plans** so you can get a world-class website today and pay as you grow.",
         features: [
             { name: "The 'Zoom-In'", desc: "Photos pop up full-screen so customers can see every detail of your work without leaving the page.", iconColor: "bg-cyan-500", ui: "📷" },
-            { name: "The 'Slide-Out'", desc: "A professional side-menu that keeps your site clean while holding all your important links.", iconColor: "bg-blue-600", ui: "📁" },
+            { name: "The 'Slide-Out'", desc: "A professional side-menu that keeps your site clean while holding all your links.", iconColor: "bg-blue-600", ui: "📁" },
             { name: "The 'Growing Box'", desc: "Sections like this one that grow only when someone wants to see more info.", iconColor: "bg-emerald-500", ui: "↕️" },
             { name: "The One-Tap Call", desc: "A direct button for mobile users. One tap and their phone starts calling your office immediately.", iconColor: "bg-indigo-500", ui: "📞" }
         ]
@@ -34,25 +34,25 @@ const serviceData = {
     apps: {
         title: "The Automatic Office",
         tagline: "Connecting your business tools into one powerful machine.",
-        why: "Automation solves the 'Day-to-Day' struggle. If your apps talk to each other, you have more time to lead your team instead of fighting with data entry.",
-        paymentInfo: "Automation is an investment in your time. Most projects pay for themselves within 30 days of going live.",
+        why: "Automation solves the 'Day-to-Day' struggle. If your apps talk to each other, you have more time to lead your team.",
+        paymentInfo: "Automation is an investment in your time. Most projects pay for themselves within 30 days.",
         features: [
             { name: "No-Typing Sync", desc: "Order info moves from your website to your shipping and accounting apps automatically.", iconColor: "bg-teal-500", ui: "🔄" },
-            { name: "The Urgent Alert", desc: "The system scans for keywords like 'Invoice' and alerts your phone immediately so you never miss a check.", iconColor: "bg-sky-500", ui: "🚨" },
-            { name: "The 60-Second Hire", desc: "Automatically set up a new hire's email, access, and training files with one single form.", iconColor: "bg-indigo-500", ui: "👤" },
-            { name: "Auto-Pilot Mail", desc: "New customers are added to your newsletter list automatically. No more manual exporting.", iconColor: "bg-blue-600", ui: "📧" }
+            { name: "The Urgent Alert", desc: "The system scans for keywords like 'Invoice' and alerts your phone immediately so you never miss a sale.", iconColor: "bg-sky-500", ui: "🚨" },
+            { name: "The 60-Second Hire", desc: "Automatically set up a new hire's email, access, and training files with one form.", iconColor: "bg-indigo-500", ui: "👤" },
+            { name: "Auto-Pilot Mail", desc: "New customers are added to your newsletter list automatically.", iconColor: "bg-blue-600", ui: "📧" }
         ]
     },
     m365: {
         title: "The Modern Office (M365)",
         tagline: "Total setup and support for Microsoft 365 (Office 365).",
-        why: "We set up the 'Modern Way'—professional email, secure shared files, and instant chat—so you can stop fighting IT and start growing.",
+        why: "We set up the 'Modern Way'—professional email, secure shared files, and instant chat—so you can stop fighting IT.",
         paymentInfo: "Affordable monthly 'Safety & Support' plans. No hidden fees, just a tech expert in your corner.",
         features: [
-            { name: "Professional Email", desc: "Get @yourcompany.com set up correctly. Syncs perfectly between your phone, laptop, and web.", iconColor: "bg-blue-600", ui: "📧" },
-            { name: "The Team Cabinet", desc: "A digital filing cabinet (SharePoint) where your team can find files without emailing copies back and forth.", iconColor: "bg-teal-600", ui: "🗄️" },
-            { name: "The Personal Locker", desc: "Your private work files (OneDrive), saved safely in the cloud so they are ready on any device.", iconColor: "bg-sky-500", ui: "☁️" },
-            { name: "The 'Magic Wand'", desc: "We use high-tech scripts (PowerShell) to fix problems or change settings across your whole company at once.", iconColor: "bg-slate-800", ui: "🪄" }
+            { name: "The Team Cabinet", desc: "A digital filing cabinet (SharePoint) where your team can find files easily.", iconColor: "bg-teal-600", ui: "🗄️" },
+            { name: "The Personal Locker", desc: "Your private work files (OneDrive), saved safely in the cloud.", iconColor: "bg-sky-500", ui: "☁️" },
+            { name: "The Digital Office", desc: "A place for your team to chat, share updates, and hold video meetings (Teams).", iconColor: "bg-indigo-600", ui: "💬" },
+            { name: "The 'Magic Wand'", desc: "We use high-tech scripts (PowerShell) to fix problems or change settings instantly.", iconColor: "bg-slate-800", ui: "🪄" }
         ]
     }
 };
@@ -107,7 +107,7 @@ function toggleDetails(type) {
                         ${data.features.map(feat => `
                             <div class="p-6 bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-all">
                                 <div class="w-12 h-12 ${feat.iconColor} rounded-2xl mb-6 flex items-center justify-center text-xl shadow-lg shadow-blue-500/10">${feat.ui}</div>
-                                <h5 class="font-extrabold text-slate-900 mb-2 text-sm uppercase">${feat.name}</h5>
+                                <h5 class="font-extrabold text-slate-900 mb-2 text-sm uppercase tracking-tight">${feat.name}</h5>
                                 <p class="text-slate-500 text-[11px] leading-relaxed">${feat.desc}</p>
                             </div>
                         `).join('')}
