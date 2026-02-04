@@ -3,118 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theory Solutions | Arizona's Visionary Infrastructure Partner</title>
-    <meta name="description" content="Empowering Arizona businesses with zero-overhead web architecture, Shopify fleet automation, and M365 ecosystems.">
     
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF66WFLLH8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LF66WFLLH8');
-    </script>
-
+    <title>Theory Solutions | Arizona Web Design & Business Automation</title>
+    <meta name="description" content="Visionary web architecture and Shopify automation for Arizona businesses. Professional M365 support with flexible 0% interest payment plans.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="theory.js" defer></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .text-brand-navy { color: #0f172a; }
-        .bg-brand-navy { background-color: #0f172a; }
-        .bg-vision-gold { background-color: #facc15; }
-        .hero-gradient { background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%); }
-        .logo-glow { filter: drop-shadow(0 0 40px rgba(250, 204, 21, 0.25)); }
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: white; scroll-behavior: smooth; }
+        .hero-gradient { background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%); min-height: 100vh; }
+        
+        /* Expansion Logic */
+        #expansion-zone { max-height: 0; overflow: hidden; transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; opacity: 0; }
+        #expansion-zone.open { max-height: 5000px; opacity: 1; margin-top: 3rem; }
+
+        .active-btn { background-color: white !important; transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .active-btn h3 { color: #0f172a !important; }
+        .active-btn p { color: #64748b !important; }
+
+        /* Video to Logo Transition Styles */
+        .header-visual-container { position: relative; width: 100%; max-width: 600px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+        #intro-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; z-index: 20; }
+        #static-logo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 1.5s ease-in-out; z-index: 10; filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.1)); }
     </style>
 </head>
-<body class="bg-white text-slate-900 overflow-x-hidden">
+<body>
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-end">
-            <a href="services.html" class="text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-blue-600 transition">Our Capabilities →</a>
-        </div>
-    </nav>
-
-    <header class="hero-gradient text-white py-24 md:py-36 px-6 border-b-8 border-vision-gold">
+    <header class="hero-gradient pt-24 pb-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            <div class="mb-16">
-                <img src="logo.png" alt="Theory Solutions Logo" class="h-48 md:h-72 mx-auto logo-glow transition transform hover:scale-105 duration-700">
+            
+            <div class="header-visual-container mb-12">
+                <video id="intro-video" muted playsinline autoplay>
+                    <source src="Theory Solutions.mp4" type="video/mp4">
+                </video>
+                <img id="static-logo" src="logo.png" alt="Theory Solutions Logo">
             </div>
 
-            <span class="inline-block px-4 py-1.5 mb-8 bg-white/10 border border-white/20 rounded-full text-white text-[10px] font-bold uppercase tracking-[0.3em]">Architecting Arizona's Next Phase</span>
-            
-            <h1 class="text-6xl md:text-9xl font-extrabold tracking-tighter mb-8 leading-[0.85]">
-                UNLEASH YOUR<br><span class="text-vision-gold italic">POTENTIAL.</span>
+            <h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.95]">
+                UNLEASH YOUR COMPANY'S<br>
+                <span class="text-white italic uppercase">Potential.</span>
             </h1>
             
-            <p class="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
-                Technology should be the wind in your sails, not the anchor holding you back. We build the high-performance infrastructure local leaders depend on to scale with confidence.
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-16 font-medium leading-relaxed">
+                Technology should be the wind in your sails, not the anchor holding you back. 
             </p>
-            
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="services.html" class="px-12 py-5 bg-vision-gold text-brand-navy font-extrabold text-lg rounded-full hover:shadow-[0_0_30px_rgba(250,204,21,0.4)] transition-all uppercase tracking-wide">Explore Capabilities</a>
-                <a href="#inquiry" class="px-12 py-5 border-2 border-slate-500 text-white font-bold text-lg rounded-full hover:bg-white hover:text-brand-navy transition-all uppercase tracking-wide">Start Your Journey</a>
-            </div>
+
+            <section class="max-w-5xl mx-auto">
+                <div class="mb-6 flex items-center gap-4 justify-center md:justify-start">
+                    <span class="h-px w-8 bg-slate-700"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500">Our Capabilities</span>
+                </div>
+                
+                <div class="p-2 md:p-4 bg-white/5 border border-white/10 rounded-[2.5rem] backdrop-blur-sm">
+                    <nav class="grid grid-cols-1 md:grid-cols-3 gap-2 text-left">
+                        <button id="btn-web" onclick="toggleDetails('web')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent">
+                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Web Design</h3>
+                            <p class="text-slate-400 text-xs italic">High-speed business sites.</p>
+                        </button>
+                        <button id="btn-apps" onclick="toggleDetails('apps')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent">
+                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">App Connections</h3>
+                            <p class="text-slate-400 text-xs italic">Shopify & Tool Automation.</p>
+                        </button>
+                        <button id="btn-m365" onclick="toggleDetails('m365')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent">
+                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Office Support</h3>
+                            <p class="text-slate-400 text-xs italic">M365 Email & Data Guard.</p>
+                        </button>
+                    </nav>
+                </div>
+            </section>
+
+            <main id="expansion-zone" class="max-w-6xl mx-auto bg-slate-50 rounded-[3rem] text-left shadow-2xl overflow-hidden mt-0">
+                <div id="expansion-content" class="text-slate-900"></div>
+            </main>
         </div>
     </header>
 
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-8 tracking-tight">An Alliance Built <br><span class="text-slate-400 font-light italic">on Progress.</span></h2>
-                <p class="text-slate-600 text-lg mb-8 leading-relaxed">
-                    We believe every local business deserves enterprise-grade tools. By integrating Shopify storefronts and M365 automation, we provide the clarity and operational freedom you need to focus on your vision.
-                </p>
-                <div class="space-y-6">
-                    <div class="flex items-start">
-                        <div class="bg-slate-50 p-3 rounded-2xl text-brand-navy">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-brand-navy uppercase text-xs tracking-widest">Visionary Scaling</h4>
-                            <p class="text-slate-500 text-sm italic">Automated workflows that unlock your team's next level of productivity.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="bg-slate-50 p-3 rounded-2xl text-brand-navy">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold text-brand-navy uppercase text-xs tracking-widest">Strategic Security</h4>
-                            <p class="text-slate-500 text-sm italic">Hardened ecosystems built to protect your business's future.</p>
-                        </div>
+    <section class="py-32 px-6 bg-white text-slate-900 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-extrabold tracking-tighter uppercase italic mb-20 text-center">Strategic Intelligence.</h2>
+            <div class="space-y-16">
+                <div class="grid md:grid-cols-3 gap-8 items-start">
+                    <div class="font-bold text-lg text-slate-300 italic">01 // Support</div>
+                    <div class="md:col-span-2">
+                        <h4 class="font-extrabold text-xl mb-3">"Should I hire a tech support person?"</h4>
+                        <p class="text-slate-600 leading-relaxed">Full-time IT hires cost significant overhead. We provide specialized automation and infrastructure for a fraction of that cost. You get a partner, not a payroll burden.</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="bg-brand-navy rounded-[3.5rem] p-12 text-white shadow-2xl relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-                <h3 class="text-3xl font-extrabold mb-8 uppercase italic leading-none text-vision-gold">The Theory Advantage.</h3>
-                <p class="text-slate-400 mb-10 text-sm leading-loose">
-                    In 2026, the market rewards those who move with precision. We partner with Arizona visionaries who are ready to step away from manual entry and into a world of automated, secure, and scalable growth.
-                </p>
-                <a href="services.html" class="block w-full py-5 bg-white text-brand-navy text-center font-bold uppercase text-sm rounded-full hover:bg-vision-gold transition-all tracking-widest">See the Potential</a>
+                <div class="grid md:grid-cols-3 gap-8 items-start">
+                    <div class="font-bold text-lg text-slate-300 italic">02 // The Modern Way</div>
+                    <div class="md:col-span-2">
+                        <h4 class="font-extrabold text-xl mb-3">"Why pick Theory Solutions?"</h4>
+                        <p class="text-slate-600 leading-relaxed">We architect your digital backbone. We are local Arizona partners who prioritize hardened security and systems that just work.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="inquiry" class="py-32 px-6 bg-slate-50">
+    <section id="contact" class="py-32 px-6 bg-slate-50">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-5xl font-extrabold text-brand-navy mb-8 tracking-tighter uppercase italic">Forge the Future.</h2>
-            <p class="text-slate-500 mb-12 font-bold uppercase tracking-widest text-xs italic">Limited Arizona Strategic Partnerships Available for 2026</p>
+            <h2 class="text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase italic">Forge the Future.</h2>
+            <p class="text-slate-500 mb-12 font-bold uppercase tracking-widest text-xs italic">Schedule A Free Consultation</p>
             
             <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <input type="hidden" name="access_key" value="57dab395-0188-4e79-b0bd-ceaca59b3af2">
-                
-                <input type="text" name="name" placeholder="Full Name" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-vision-gold transition">
-                <input type="email" name="email" placeholder="Business Email" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-vision-gold transition">
-                <textarea name="message" placeholder="What is your vision for your business this year?" required class="md:col-span-2 h-32 bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-vision-gold transition"></textarea>
-                
-                <button type="submit" class="md:col-span-2 py-6 bg-brand-navy text-white font-extrabold uppercase text-lg rounded-2xl hover:bg-slate-800 transition-all shadow-xl">Request Visionary Audit</button>
+                <input type="text" name="name" placeholder="Full Name" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm">
+                <input type="email" name="email" placeholder="Business Email" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm">
+                <textarea name="message" placeholder="What is your vision for your business this year?" required class="md:col-span-2 h-32 bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm"></textarea>
+                <button type="submit" class="md:col-span-2 py-6 bg-slate-900 text-white font-extrabold uppercase text-sm rounded-2xl hover:bg-blue-600 transition-all shadow-xl tracking-widest">Schedule Consultation</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-16 text-center border-t border-slate-100 bg-white text-[10px] font-bold uppercase tracking-[0.6em] text-slate-300">
-        Theory Solutions // Arizona Excellence // 2026
+    <footer class="py-12 text-center text-[10px] font-bold uppercase tracking-[0.5em] text-slate-500 bg-slate-900">
+        Theory Solutions &copy; 2026 // Arizona Excellence
     </footer>
 
 </body>
