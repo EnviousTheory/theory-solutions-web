@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF66WFLLH8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LF66WFLLH8');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -89,15 +97,18 @@
 
     <section id="contact" class="py-32 px-6 bg-slate-50 border-t border-slate-200">
         <div class="max-w-3xl mx-auto text-center">
-            [Image of a professional web development contact form layout]
             <h2 class="text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase italic">Get Started Today.</h2>
             <p class="text-slate-500 mb-12 font-bold uppercase tracking-widest text-xs italic">Schedule Your Free Strategy Consultation</p>
             
             <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <input type="hidden" name="access_key" value="57dab395-0188-4e79-b0bd-ceaca59b3af2">
+                
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                 <input type="text" name="name" placeholder="Full Name" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm">
                 <input type="email" name="email" placeholder="Business Email" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm">
-                <textarea name="message" placeholder="What is your vision for your business this year?" required class="md:col-span-2 h-32 bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm"></textarea>
+                <textarea name="message" placeholder="What is your vision for your business? (Mention if you came from Reddit!)" required class="md:col-span-2 h-32 bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm"></textarea>
+                
                 <button type="submit" class="md:col-span-2 py-6 bg-slate-900 text-white font-extrabold uppercase text-sm rounded-2xl hover:bg-blue-600 transition-all shadow-xl tracking-widest">Book My Free Consultation</button>
             </form>
         </div>
