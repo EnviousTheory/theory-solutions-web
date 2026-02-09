@@ -30,9 +30,9 @@ const serviceData = {
         ]
     },
     apps: {
-        title: "The Automatic Office",
+        title: "Workflow Engineering",
         tagline: "Connecting your business tools into one powerful machine.",
-        why: "Automation solves the 'Day-to-Day' struggle. If your apps talk to each other, you have more time to lead your team.",
+        why: "Automation solves the 'Day-to-Day' struggle. We synchronize your data so you can stop doing manual entry and start leading.",
         paymentInfo: "Automation is an investment in your time. Most projects pay for themselves within 30 days of going live.",
         features: [
             { name: "No-Typing Sync", desc: "Order info moves from your website to your shipping and accounting apps automatically.", iconColor: "bg-teal-500", ui: "🔄" },
@@ -41,16 +41,18 @@ const serviceData = {
             { name: "Auto-Pilot Mail", desc: "New customers are added to your newsletter list automatically.", iconColor: "bg-blue-600", ui: "📧" }
         ]
     },
-    m365: {
-        title: "The Modern Office (M365)",
-        tagline: "Total setup and support for Microsoft 365 (Office 365).",
-        why: "We set up the 'Modern Way'—professional email, secure shared files, and instant chat—so you can stop fighting IT.",
-        paymentInfo: "Affordable monthly 'Safety & Support' plans. No hidden fees, just a tech expert in your corner.",
+    // REPLACED M365 WITH COMM FOR STEALTH & TWILIO COMPLIANCE
+    comm: {
+        title: "Communication Utilities",
+        tagline: "Secure SMS and Voice Proxy bridges for modern business.",
+        why: "We provide the infrastructure that allows you to communicate with customers securely. From masked calling to automated lead alerts, we keep your data private and your response time instant.",
+        compare: { old: "Using personal phone numbers for business.", modern: "Masked, secure, and recorded business bridges." },
+        paymentInfo: "Scalable communication plans. Pay only for the messages and minutes your business actually uses.",
         features: [
-            { name: "The Team Cabinet", desc: "A digital filing cabinet (SharePoint) where your team can find files easily.", iconColor: "bg-teal-600", ui: "🗄️" },
-            { name: "The Personal Locker", desc: "Your private work files (OneDrive), saved safely in the cloud.", iconColor: "bg-sky-500", ui: "☁️" },
-            { name: "The Digital Office", desc: "A place for your team to chat, share updates, and hold video meetings (Teams).", iconColor: "bg-indigo-600", ui: "💬" },
-            { name: "The 'Magic Wand'", desc: "We use high-tech scripts (PowerShell) to fix problems or change settings instantly.", iconColor: "bg-slate-800", ui: "🪄" }
+            { name: "Secure SMS Bridge", desc: "Send automated updates and quotes to customers without exposing your personal mobile number.", iconColor: "bg-blue-500", ui: "💬" },
+            { name: "The Voice Proxy", desc: "Connect customers to providers via a masked number to ensure privacy for both parties.", iconColor: "bg-indigo-600", ui: "🛡️" },
+            { name: "Lead Gateways", desc: "Instantly notify your team via text the moment a new estimate is requested online.", iconColor: "bg-emerald-500", ui: "⚡" },
+            { name: "Status Automator", desc: "Automatically text customers when their order status changes or their service is complete.", iconColor: "bg-slate-800", ui: "🤖" }
         ]
     }
 };
@@ -76,9 +78,12 @@ function toggleDetails(type) {
     }
 
     const activeBtn = document.getElementById(`btn-${type}`);
-    activeBtn.classList.add('active-btn');
-    activeBtn.querySelector('.label-text').innerText = "Close Details";
-    activeBtn.querySelector('.detail-label span:first-child').innerText = "−";
+    // If the button exists (handling the m365 to comm button mapping)
+    if (activeBtn) {
+        activeBtn.classList.add('active-btn');
+        activeBtn.querySelector('.label-text').innerText = "Close Details";
+        activeBtn.querySelector('.detail-label span:first-child').innerText = "−";
+    }
     
     const data = serviceData[type];
     const compareHtml = data.compare ? `
@@ -104,7 +109,7 @@ function toggleDetails(type) {
                     ${compareHtml}
                     <div class="p-8 bg-white border border-slate-200 rounded-3xl mb-8 shadow-sm text-sm text-slate-600 leading-relaxed italic">"${data.why}"</div>
                     <div class="p-8 bg-blue-50 border border-blue-100 rounded-3xl mb-12 text-sm text-blue-800 leading-relaxed">
-                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Financial Flexibility</h4>
+                        <h4 class="font-bold mb-2 uppercase text-xs tracking-widest">Efficiency & Value</h4>
                         ${data.paymentInfo}
                     </div>
                     <a href="#contact" class="inline-block px-10 py-5 bg-slate-900 text-white font-extrabold rounded-2xl uppercase tracking-[0.2em] text-xs hover:bg-blue-600 transition-all shadow-lg">Schedule Consultation</a>

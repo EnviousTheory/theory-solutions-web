@@ -12,8 +12,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Theory Solutions | Arizona Web Design & Business Automation</title>
-    <meta name="description" content="Visionary web architecture and Shopify automation for Arizona businesses. Professional M365 support with flexible 0% interest payment plans.">
+    <title>Theory Solutions | Arizona Web Architecture & Workflow Automation</title>
+    <meta name="description" content="Visionary web architecture and Shopify automation for Arizona businesses. Professional workflow engineering and secure communication utilities.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="theory.js" defer></script>
@@ -62,24 +62,24 @@
                     <nav class="grid grid-cols-1 md:grid-cols-3 gap-2 text-left">
                         
                         <button id="btn-web" onclick="toggleDetails('web')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative">
-                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Web Design</h3>
-                            <p class="text-slate-400 text-xs italic mb-6">High-speed business sites.</p>
+                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Web Architecture</h3>
+                            <p class="text-slate-400 text-xs italic mb-6">High-performance business sites.</p>
                             <div class="detail-label text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 flex items-center gap-2 group-hover:gap-3 transition-all">
                                 <span class="text-lg leading-none">+</span> <span class="label-text">Click for Details</span>
                             </div>
                         </button>
 
                         <button id="btn-apps" onclick="toggleDetails('apps')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative">
-                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">App Connections</h3>
-                            <p class="text-slate-400 text-xs italic mb-6">Shopify & Tool Automation.</p>
+                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Workflow Engineering</h3>
+                            <p class="text-slate-400 text-xs italic mb-6">Cross-platform app automation.</p>
                             <div class="detail-label text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 flex items-center gap-2 group-hover:gap-3 transition-all">
                                 <span class="text-lg leading-none">+</span> <span class="label-text">Click for Details</span>
                             </div>
                         </button>
 
-                        <button id="btn-m365" onclick="toggleDetails('m365')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative">
-                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Office Support</h3>
-                            <p class="text-slate-400 text-xs italic mb-6">M365 Email & Data Guard.</p>
+                        <button id="btn-comm" onclick="toggleDetails('comm')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative">
+                            <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Communication Utilities</h3>
+                            <p class="text-slate-400 text-xs italic mb-6">Secure SMS & Voice Bridges.</p>
                             <div class="detail-label text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 flex items-center gap-2 group-hover:gap-3 transition-all">
                                 <span class="text-lg leading-none">+</span> <span class="label-text">Click for Details</span>
                             </div>
@@ -102,12 +102,11 @@
             
             <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
                 <input type="hidden" name="access_key" value="57dab395-0188-4e79-b0bd-ceaca59b3af2">
-                
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                <input type="text" name="name" placeholder="Full Name" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm">
-                <input type="email" name="email" placeholder="Business Email" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm">
-                <textarea name="message" placeholder="What is your vision for your business? (Mention if you came from Reddit!)" required class="md:col-span-2 h-32 bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm"></textarea>
+                <input type="text" name="name" placeholder="Full Name" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900">
+                <input type="email" name="email" placeholder="Business Email" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900">
+                <textarea name="message" placeholder="What is your vision for your business?" required class="md:col-span-2 h-32 bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900"></textarea>
                 
                 <button type="submit" class="md:col-span-2 py-6 bg-slate-900 text-white font-extrabold uppercase text-sm rounded-2xl hover:bg-blue-600 transition-all shadow-xl tracking-widest">Book My Free Consultation</button>
             </form>
@@ -115,7 +114,13 @@
     </section>
 
     <footer class="py-12 text-center text-[10px] font-bold uppercase tracking-[0.5em] text-slate-500 bg-slate-900">
-        Theory Solutions &copy; 2026 // Arizona Excellence
+        <div class="mb-4">Theory Solutions &copy; 2026 // Arizona Excellence</div>
+        <div class="tracking-[0.2em] opacity-60 leading-loose">
+            Theory Solutions is a brand operated by EnviousTheory Studios LLC<br>
+            Tucson, Arizona<br><br>
+            <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a> | 
+            <a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+        </div>
     </footer>
 
 </body>
