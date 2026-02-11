@@ -3,157 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Estimate Utility | Theory Solutions</title>
+    <title>Service Estimator | Theory Solutions</title>
     <style>
-        :root { 
-            --navy: #0f172a; 
-            --accent: #2563eb; 
-            --slate: #64748b;
-            --white: #ffffff; 
-            --bg: #f8fafc;
-            --border: #e2e8f0;
-            --success: #10b981;
-        }
-
-        body { 
-            font-family: 'Inter', -apple-system, system-ui, sans-serif; 
-            background-color: var(--bg); 
-            color: var(--navy); 
-            margin: 0; 
-            line-height: 1.6;
-        }
-
-        header { 
-            background: var(--navy); 
-            color: white; 
-            padding: 1.5rem; 
-            text-align: center; 
-            font-weight: 700; 
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 4px solid var(--accent);
-        }
-
+        :root { --navy: #0f172a; --accent: #2563eb; --slate: #64748b; --white: #ffffff; --bg: #f8fafc; --border: #e2e8f0; --success: #10b981; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--navy); margin: 0; line-height: 1.6; }
+        header { background: var(--navy); color: white; padding: 1.5rem; text-align: center; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; border-bottom: 4px solid var(--accent); }
         .wrapper { max-width: 650px; margin: 3rem auto; padding: 0 1.5rem; }
-
-        .calculator-card { 
-            background: var(--white); 
-            padding: 2.5rem; 
-            border-radius: 1rem; 
-            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); 
-            border: 1px solid var(--border);
-        }
-
+        .calculator-card { background: var(--white); padding: 2.5rem; border-radius: 1rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); border: 1px solid var(--border); }
         h2 { margin-top: 0; font-size: 1.5rem; text-align: center; color: var(--navy); }
         .sub-text { text-align: center; color: var(--slate); font-size: 0.95rem; margin-bottom: 2rem; }
-
-        .input-row { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 1.25rem 0; 
-            border-bottom: 1px solid #f1f5f9; 
-        }
-
-        .input-row span { font-weight: 500; }
-
-        input[type="number"] { 
-            width: 70px; 
-            padding: 0.6rem; 
-            border: 2px solid var(--border); 
-            border-radius: 0.5rem; 
-            text-align: center;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-
-        input[type="number"]:focus { border-color: var(--accent); outline: none; }
-
-        .calc-btn { 
-            width: 100%; 
-            background: var(--navy); 
-            color: white; 
-            padding: 1.1rem; 
-            border-radius: 0.6rem; 
-            font-weight: 700; 
-            border: none; 
-            cursor: pointer;
-            margin-top: 1.5rem;
-            font-size: 1rem;
-            transition: background 0.2s;
-        }
-
+        .input-row { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; border-bottom: 1px solid #f1f5f9; }
+        input[type="number"] { width: 70px; padding: 0.6rem; border: 2px solid var(--border); border-radius: 0.5rem; text-align: center; font-weight: 700; }
+        .calc-btn { width: 100%; background: var(--navy); color: white; padding: 1.1rem; border-radius: 0.6rem; font-weight: 700; border: none; cursor: pointer; margin-top: 1.5rem; font-size: 1rem; transition: 0.2s; }
         .calc-btn:hover { background: #1e293b; }
-
-        #estimate-box { 
-            display: none; 
-            margin-top: 2rem; 
-            padding: 2rem; 
-            background: #f0f7ff; 
-            border: 1px solid #bae6fd;
-            border-radius: 0.75rem; 
-            text-align: center;
-        }
-
-        .total-label { font-size: 0.85rem; font-weight: 700; color: var(--slate); text-transform: uppercase; }
+        #estimate-box { display: none; margin-top: 2rem; padding: 2rem; background: #f0f7ff; border: 1px solid #bae6fd; border-radius: 0.75rem; text-align: center; }
         .total-price { display: block; font-size: 2.75rem; font-weight: 900; color: var(--accent); margin: 0.5rem 0; }
-
-        .secure-btn { 
-            background: var(--success); 
-            color: white; 
-            padding: 1rem 2rem; 
-            font-weight: 700; 
-            border: none; 
-            border-radius: 0.5rem; 
-            cursor: pointer; 
-            width: 100%;
-            text-transform: uppercase;
-        }
-
+        .secure-btn { background: var(--success); color: white; padding: 1rem 2rem; font-weight: 700; border: none; border-radius: 0.5rem; cursor: pointer; width: 100%; text-transform: uppercase; }
         .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px); z-index: 999; }
-        .modal { 
-            display: none; 
-            position: fixed; 
-            top: 50%; left: 50%; transform: translate(-50%, -50%); 
-            background: white; padding: 2.5rem; border-radius: 1.25rem; 
-            width: 90%; max-width: 420px; z-index: 1000; 
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-        }
-
-        .modal h3 { margin-top: 0; color: var(--navy); }
-        .modal input[type="text"], .modal input[type="tel"] { 
-            width: 100%; padding: 0.8rem; margin: 0.5rem 0 1.5rem 0; 
-            border: 1px solid var(--border); border-radius: 0.4rem; box-sizing: border-box;
-        }
-
+        .modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2.5rem; border-radius: 1.25rem; width: 90%; max-width: 420px; z-index: 1000; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
+        .modal input { width: 100%; padding: 0.8rem; margin: 0.5rem 0 1.5rem 0; border: 1px solid var(--border); border-radius: 0.4rem; box-sizing: border-box; }
         .consent-container { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 20px; text-align: left; }
         .consent-text { font-size: 0.72rem; color: var(--slate); line-height: 1.4; }
-
         footer { text-align: center; padding: 4rem 1rem; color: var(--slate); font-size: 0.8rem; border-top: 1px solid var(--border); background: #fff; margin-top: 3rem; }
         footer a { color: var(--accent); font-weight: 600; text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
 
-<header>Theory Solutions Network Utility</header>
+<header>Theory Solutions MSP Utility</header>
 
 <div class="wrapper">
     <div class="calculator-card">
-        <h2>Fulfillment Estimator</h2>
-        <p class="sub-text">Generate a project logic estimate for local Tucson service fulfillment.</p>
+        <h2>Infrastructure Estimator</h2>
+        <p class="sub-text">Generate a baseline cost estimate for technical setup and system audits.</p>
 
-        <div class="input-row"><span>Commercial Folding Chairs</span><input type="number" id="chairs" value="0" min="0"></div>
-        <div class="input-row"><span>6ft Folding Banquet Tables</span><input type="number" id="tables" value="0" min="0"></div>
-        <div class="input-row"><span>Standard Jumping Castle</span><input type="number" id="castle" value="0" min="0"></div>
-        <div class="input-row"><span>360 Photo Booth Session</span><input type="number" id="booth" value="0" min="0"></div>
+        <div class="input-row"><span>Endpoint (Antivirus) Setup</span><input type="number" id="antivirus" value="0" min="0"></div>
+        <div class="input-row"><span>Security Architecture Audit</span><input type="number" id="audit" value="0" min="0"></div>
+        <div class="input-row"><span>M365 Ecosystem Migration</span><input type="number" id="migration" value="0" min="0"></div>
+        <div class="input-row"><span>Hardware Provisioning</span><input type="number" id="hardware" value="0" min="0"></div>
 
-        <button class="calc-btn" onclick="calculate()">Generate Estimate</button>
+        <button class="calc-btn" onclick="calculate()">Generate Project Estimate</button>
 
         <div id="estimate-box">
-            <span class="total-label">Projected Market Rate</span>
             <span class="total-price" id="total-val">$0.00</span>
-            <button class="secure-btn" onclick="showModal()">Secure Rate & Match</button>
+            <button class="secure-btn" onclick="showModal()">Request Fulfillment Ticket</button>
         </div>
     </div>
 </div>
@@ -162,67 +55,47 @@
 <div class="modal" id="contact-modal">
     <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="57dab395-0188-4e79-b0bd-ceaca59b3af2">
-        <input type="hidden" name="subject" value="New Project Lead - Tucson Network">
+        <h3>Submit Service Ticket</h3>
+        <p style="font-size: 0.85rem; color: var(--slate); margin-bottom: 1.5rem;">A technician will be notified to review your infrastructure requirements.</p>
         
-        <h3>Connect with a Provider</h3>
-        <p style="font-size: 0.85rem; color: var(--slate); margin-bottom: 1.5rem;">We will bridge your request with an independent local professional.</p>
+        <label style="font-size:0.75rem; font-weight:700; text-transform:uppercase;">Point of Contact</label>
+        <input type="text" name="name" required>
         
-        <label style="font-size:0.75rem; font-weight:700; text-transform:uppercase;">Full Name</label>
-        <input type="text" name="name" placeholder="Name" required>
-        
-        <label style="font-size:0.75rem; font-weight:700; text-transform:uppercase;">Phone Number</label>
-        <input type="tel" name="phone" placeholder="(520) 000-0000" required>
+        <label style="font-size:0.75rem; font-weight:700; text-transform:uppercase;">Business Phone</label>
+        <input type="tel" name="phone" required>
 
         <div class="consent-container">
-            <input type="checkbox" id="sms-consent" name="sms_consent" style="margin-top: 3px;" required>
+            <input type="checkbox" id="sms-consent" name="sms_consent" required>
             <label for="sms-consent" class="consent-text">
-                I agree to receive recurring automated project alerts and service SMS from Theory Solutions at the number provided. Consent is not a condition of purchase. Msg & data rates may apply. Reply STOP to opt-out. See <a href="privacy.html">Privacy Policy</a>.
+                I agree to receive automated service request alerts from Theory Solutions. Message and data rates may apply. Reply STOP to opt-out. See our <a href="privacy.html">Privacy Policy</a>.
             </label>
         </div>
 
-        <button type="submit" class="calc-btn" style="margin:0;">Request Fulfillment</button>
-        <button type="button" onclick="hideModal()" style="background:none; border:none; color:var(--slate); width:100%; margin-top:1rem; cursor:pointer; font-size:0.8rem;">Go Back</button>
+        <button type="submit" class="calc-btn" style="margin:0;">Confirm Request</button>
+        <button type="button" onclick="hideModal()" style="background:none; border:none; color:var(--slate); width:100%; margin-top:1rem; cursor:pointer;">Cancel</button>
     </form>
 </div>
 
 <footer>
-    <p>Theory Solutions is a cross-industry communication brand owned by <strong>ENVIOUSTHEORY STUDIOS LLC</strong>.</p>
-    <p>
-        <a href="privacy.html">Terms & Privacy</a> | 
-        <a href="index.html">Home</a>
-    </p>
-    <p style="margin-top: 1.5rem; opacity: 0.6;">7344 E 20th St, Tucson, AZ 85710</p>
+    <p>Theory Solutions is a technical fulfillment brand owned by <strong>ENVIOUSTHEORY STUDIOS LLC</strong>.</p>
+    <p><a href="privacy.html">Terms & Privacy</a> | <a href="index.html">Home</a></p>
+    <p style="margin-top: 1rem; opacity: 0.6;">7344 E 20th St, Tucson, AZ 85710</p>
 </footer>
 
 <script>
     function calculate() {
-        const rates = { chairs: 2.50, tables: 15.00, castle: 225.00, booth: 475.00 };
-        const total = (document.getElementById('chairs').value * rates.chairs) +
-                      (document.getElementById('tables').value * rates.tables) +
-                      (document.getElementById('castle').value * rates.castle) +
-                      (document.getElementById('booth').value * rates.booth);
-
+        // Sample MSP Rates
+        const total = (document.getElementById('antivirus').value * 45) + 
+                      (document.getElementById('audit').value * 500) + 
+                      (document.getElementById('migration').value * 125) +
+                      (document.getElementById('hardware').value * 85);
         if (total > 0) {
-            document.getElementById('total-val').innerText = new Intl.NumberFormat('en-US', {
-                style: 'currency', currency: 'USD'
-            }).format(total);
+            document.getElementById('total-val').innerText = `$${total.toFixed(2)}`;
             document.getElementById('estimate-box').style.display = 'block';
-            document.getElementById('estimate-box').scrollIntoView({ behavior: 'smooth' });
-        } else {
-            alert("Please select at least one requirement.");
         }
     }
-
-    function showModal() { 
-        document.getElementById('contact-modal').style.display = 'block'; 
-        document.getElementById('overlay').style.display = 'block'; 
-        document.body.style.overflow = 'hidden';
-    }
-    function hideModal() { 
-        document.getElementById('contact-modal').style.display = 'none'; 
-        document.getElementById('overlay').style.display = 'none'; 
-        document.body.style.overflow = 'auto';
-    }
+    function showModal() { document.getElementById('contact-modal').style.display = 'block'; document.getElementById('overlay').style.display = 'block'; }
+    function hideModal() { document.getElementById('contact-modal').style.display = 'none'; document.getElementById('overlay').style.display = 'none'; }
 </script>
 
 </body>
