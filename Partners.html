@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Onboarding | Theory Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+    <nav class="bg-blue-900 py-6 px-6 text-white flex justify-between items-center shadow-md">
+        <a href="index.html" class="font-bold text-xl tracking-tight">Theory Solutions</a>
+        <a href="index.html" class="text-sm border border-blue-400 px-4 py-1 rounded hover:bg-blue-800 transition">Back to Estimator</a>
+    </nav>
+
+    <header class="py-16 px-6 text-center">
+        <h1 class="text-4xl font-extrabold text-blue-900">Partner With Us</h1>
+        <p class="text-slate-600 mt-4 max-w-xl mx-auto">Join the Theory Solutions network to receive real-time service requests directly to your mobile device.</p>
+    </header>
+
+    <section class="max-w-2xl mx-auto px-6 pb-24">
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
+            <form class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-1 text-slate-700">Company Name</label>
+                        <input type="text" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1 text-slate-700">Service Type</label>
+                        <input type="text" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg" placeholder="e.g. PDR, Glass, HVAC" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1 text-slate-700">Mobile Phone (For SMS Alerts)</label>
+                    <input type="tel" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg" placeholder="000-000-0000" required>
+                </div>
+
+                <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="smsConsent" class="mt-1 mr-4 h-5 w-5 text-blue-600 rounded" required>
+                        <label for="smsConsent" class="text-sm text-slate-700">
+                            I provide express written consent to receive automated SMS fulfillment alerts from Theory Solutions. Consent is not a condition of partnership. Msg & data rates may apply. Reply STOP to opt-out or HELP for info.
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-4 rounded-xl hover:bg-blue-800 transition shadow-md uppercase tracking-wider">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 text-center text-xs">
+        <div class="space-x-6 mb-6 text-sm">
+            <a href="privacy-partner.html" class="underline hover:text-white transition">Partner Privacy Policy</a>
+            <a href="terms.html" class="underline hover:text-white transition">Terms of Service</a>
+        </div>
+        <p>Powered by Theory Solutions</p>
+    </footer>
+</body>
+</html>
