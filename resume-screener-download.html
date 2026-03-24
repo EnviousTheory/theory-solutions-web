@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF66WFLLH8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LF66WFLLH8');
+      // Track purchase conversion
+      gtag('event', 'purchase', { currency: 'USD', value: 39.99 });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Download Resume Screener | Theory Solutions</title>
+    <!-- Prevent search engine indexing of the download page -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: white; min-height: 100vh; display: flex; flex-direction: column; }
+
+        .hero-gradient { background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%); }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #16a34a;
+            color: white;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 1.5rem 3rem;
+            border-radius: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 8px 32px rgba(22,163,74,0.4);
+        }
+        .download-btn:hover {
+            background: #15803d;
+            transform: translateY(-2px);
+            box-shadow: 0 16px 48px rgba(22,163,74,0.5);
+        }
+
+        @keyframes checkmark-pop {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .checkmark-anim { animation: checkmark-pop 0.5s ease forwards; }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fade-up 0.6s ease forwards; }
+        .fade-up-delay-1 { animation: fade-up 0.6s ease 0.15s forwards; opacity: 0; }
+        .fade-up-delay-2 { animation: fade-up 0.6s ease 0.3s forwards; opacity: 0; }
+        .fade-up-delay-3 { animation: fade-up 0.6s ease 0.45s forwards; opacity: 0; }
+    </style>
+</head>
+<body class="hero-gradient">
+
+    <main class="flex-1 flex items-center justify-center px-6 py-24">
+        <div class="max-w-xl w-full text-center">
+
+            <!-- Success Checkmark -->
+            <div class="checkmark-anim w-24 h-24 bg-green-500/20 border-2 border-green-500 rounded-full flex items-center justify-center mx-auto mb-8 text-4xl">
+                ✓
+            </div>
+
+            <span class="fade-up inline-block bg-blue-500/15 border border-blue-500/30 text-blue-300 text-[10px] font-bold uppercase tracking-[0.3em] px-4 py-1.5 rounded-full mb-6">
+                Theory Solutions // Payment Confirmed
+            </span>
+
+            <h1 class="fade-up-delay-1 text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">
+                You're all set.<br>
+                <span class="text-green-400 italic">Download below.</span>
+            </h1>
+
+            <p class="fade-up-delay-2 text-slate-400 mb-12 text-sm leading-relaxed max-w-sm mx-auto">
+                Your purchase is confirmed. Click the button below to download your installer. Save it somewhere safe — this is a one-time link.
+            </p>
+
+            <!--
+                ============================================================
+                REPLACE href WITH YOUR ACTUAL .EXE FILE URL
+                Upload ResumeScreener-Setup.exe to your server, then
+                put the direct link here. Example:
+                href="https://theory-solutions.com/files/ResumeScreener-Setup.exe"
+                ============================================================
+            -->
+            <div class="fade-up-delay-3">
+                <a href="https://splendid-sunshine-bbaa41.netlify.app/resume-screener.exe" class="download-btn" download>
+                    <span class="text-xl">⬇</span>
+                    Download Resume Screener (.exe)
+                </a>
+
+                <p class="text-[10px] text-slate-500 mt-6 uppercase tracking-widest">
+                    Windows 10/11 · 64-bit · ~85MB installer
+                </p>
+            </div>
+
+            <!-- Install Instructions -->
+            <div class="mt-16 p-8 bg-white/5 border border-white/10 rounded-3xl text-left">
+                <h3 class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-400 mb-6">Installation (3 Steps)</h3>
+                <ol class="space-y-4">
+                    <li class="flex gap-4 text-sm text-slate-300">
+                        <span class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5">1</span>
+                        <div>
+                            <strong class="text-white block mb-0.5">Run the installer</strong>
+                            Double-click <code class="text-blue-400 text-xs">ResumeScreener-Setup.exe</code>. If Windows SmartScreen appears, click <em>"More info"</em> → <em>"Run anyway"</em>.
+                        </div>
+                    </li>
+                    <li class="flex gap-4 text-sm text-slate-300">
+                        <span class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5">2</span>
+                        <div>
+                            <strong class="text-white block mb-0.5">Complete setup</strong>
+                            Follow the installer prompts. Takes under 60 seconds.
+                        </div>
+                    </li>
+                    <li class="flex gap-4 text-sm text-slate-300">
+                        <span class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-0.5">3</span>
+                        <div>
+                            <strong class="text-white block mb-0.5">Launch and load PDFs</strong>
+                            Open Resume Screener from your Start Menu, click "Add PDFs", and you're screening immediately.
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Support -->
+            <p class="mt-10 text-xs text-slate-500">
+                Need help? Email <a href="mailto:justin.dallaire@theory-solutions.com" class="text-blue-400 hover:underline">justin.dallaire@theory-solutions.com</a>
+            </p>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 text-center text-[10px] font-bold uppercase tracking-[0.4em] text-slate-600 border-t border-white/5">
+        Theory Solutions // ENVIOUSTHEORY STUDIOS LLC // Tucson, Arizona // © 2026
+    </footer>
+
+</body>
+</html>

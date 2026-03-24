@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LF66WFLLH8"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,18 +12,83 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Theory Solutions | Arizona Enterprise Architecture & Automation</title>
-    <meta name="description" content="Visionary web architecture and workflow automation by ENVIOUSTHEORY STUDIOS LLC. Professional engineering and secure communication bridges for Arizona business.">
-    
+
+    <!-- ═══════════════════════════════════════════════════
+         PRIMARY SEO
+    ═══════════════════════════════════════════════════ -->
+    <title>Theory Solutions | Arizona Enterprise Architecture & Automation | Tucson, AZ</title>
+    <meta name="description" content="Theory Solutions delivers enterprise web architecture, workflow automation, and communication utilities for Arizona businesses. Based in Tucson, AZ — operated by ENVIOUSTHEORY STUDIOS LLC.">
+    <meta name="keywords" content="web design Tucson, enterprise architecture Arizona, workflow automation Tucson, business automation, web development Arizona, Theory Solutions, ENVIOUSTHEORY STUDIOS">
+    <meta name="author" content="Theory Solutions — ENVIOUSTHEORY STUDIOS LLC">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://theory-solutions.com/">
+
+    <!-- ═══════════════════════════════════════════════════
+         OPEN GRAPH (Facebook, LinkedIn previews)
+    ═══════════════════════════════════════════════════ -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theory-solutions.com/">
+    <meta property="og:title" content="Theory Solutions | Arizona Enterprise Architecture & Automation">
+    <meta property="og:description" content="Visionary web architecture and workflow automation for Arizona business. High-performance systems, automation engineering, and secure communication bridges.">
+    <meta property="og:image" content="https://theory-solutions.com/logo.png">
+    <meta property="og:site_name" content="Theory Solutions">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ═══════════════════════════════════════════════════
+         TWITTER CARD
+    ═══════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Theory Solutions | Arizona Enterprise Architecture & Automation">
+    <meta name="twitter:description" content="Visionary web architecture and workflow automation for Arizona business.">
+    <meta name="twitter:image" content="https://theory-solutions.com/logo.png">
+
+    <!-- ═══════════════════════════════════════════════════
+         JSON-LD STRUCTURED DATA
+    ═══════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Theory Solutions",
+      "legalName": "ENVIOUSTHEORY STUDIOS LLC",
+      "url": "https://theory-solutions.com",
+      "logo": "https://theory-solutions.com/logo.png",
+      "description": "Enterprise web architecture, workflow automation, and communication utilities for Arizona businesses.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Arizona"
+      },
+      "serviceType": [
+        "Web Design",
+        "Enterprise Architecture",
+        "Workflow Automation",
+        "Communication Utilities",
+        "Business Software"
+      ],
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "justin.dallaire@theory-solutions.com"
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="theory.js" defer></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-        
+
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: white; scroll-behavior: smooth; }
         .hero-gradient { background: radial-gradient(circle at top right, #1e293b 0%, #0f172a 100%); min-height: 100vh; }
-        
+
         #expansion-zone { max-height: 0; overflow: hidden; transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; opacity: 0; }
         #expansion-zone.open { max-height: 5000px; opacity: 1; margin-top: 3rem; }
 
@@ -34,34 +100,38 @@
         .header-visual-container { position: relative; width: 100%; max-width: 600px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
         #intro-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; z-index: 20; }
         #static-logo { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 1.5s ease-in-out; z-index: 10; filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.1)); }
+
+        /* Products strip */
+        .product-card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; }
+        .product-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.4); border-color: rgba(37,99,235,0.5) !important; }
     </style>
 </head>
 <body>
 
     <header class="hero-gradient pt-24 pb-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            
+
             <div class="header-visual-container mb-12">
                 <video id="intro-video" muted playsinline autoplay>
                     <source src="theory-solutions.mp4" type="video/mp4">
                 </video>
-                <img id="static-logo" src="logo.png" alt="Theory Solutions Logo">
+                <img id="static-logo" src="logo.png" alt="Theory Solutions Logo — Arizona Enterprise Architecture">
             </div>
 
             <h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[0.95]">
                 UNLEASH YOUR COMPANY'S<br>
                 <span class="text-white italic uppercase">Potential.</span>
             </h1>
-            
+
             <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-16 font-medium leading-relaxed">
-                Technology should be the wind in your sails, not the anchor holding you back. 
+                Technology should be the wind in your sails, not the anchor holding you back.
             </p>
 
-            <section class="max-w-5xl mx-auto">
+            <section class="max-w-5xl mx-auto" aria-label="Services">
                 <div class="p-2 md:p-4 bg-white/5 border border-white/10 rounded-[2.5rem] backdrop-blur-sm">
-                    <nav class="grid grid-cols-1 md:grid-cols-3 gap-2 text-left">
-                        
-                        <button id="btn-web" onclick="toggleDetails('web')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative">
+                    <nav class="grid grid-cols-1 md:grid-cols-3 gap-2 text-left" aria-label="Service categories">
+
+                        <button id="btn-web" onclick="toggleDetails('web')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative" aria-expanded="false">
                             <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Industry Architecture</h3>
                             <p class="text-slate-400 text-xs italic mb-6">High-performance business systems.</p>
                             <div class="detail-label text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 flex items-center gap-2 group-hover:gap-3 transition-all">
@@ -69,7 +139,7 @@
                             </div>
                         </button>
 
-                        <button id="btn-apps" onclick="toggleDetails('apps')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative">
+                        <button id="btn-apps" onclick="toggleDetails('apps')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative" aria-expanded="false">
                             <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Workflow Engineering</h3>
                             <p class="text-slate-400 text-xs italic mb-6">Automation for cross-platform scale.</p>
                             <div class="detail-label text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 flex items-center gap-2 group-hover:gap-3 transition-all">
@@ -77,7 +147,7 @@
                             </div>
                         </button>
 
-                        <button id="btn-comm" onclick="toggleDetails('comm')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative">
+                        <button id="btn-comm" onclick="toggleDetails('comm')" class="group p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 border border-transparent text-left relative" aria-expanded="false">
                             <h3 class="text-white font-bold uppercase tracking-widest text-xs mb-2">Communication Utilities</h3>
                             <p class="text-slate-400 text-xs italic mb-6">Secure Multi-Industry Bridges.</p>
                             <div class="detail-label text-[10px] font-bold uppercase tracking-[0.2em] text-blue-400 flex items-center gap-2 group-hover:gap-3 transition-all">
@@ -89,25 +159,54 @@
                 </div>
             </section>
 
-            <main id="expansion-zone" class="max-w-6xl mx-auto bg-slate-50 rounded-[3rem] text-left shadow-2xl overflow-hidden mt-0">
+            <main id="expansion-zone" class="max-w-6xl mx-auto bg-slate-50 rounded-[3rem] text-left shadow-2xl overflow-hidden mt-0" aria-live="polite">
                 <div id="expansion-content" class="text-slate-900"></div>
             </main>
         </div>
     </header>
 
-    <section id="contact" class="py-32 px-6 bg-slate-50 border-t border-slate-200">
+    <!-- ═══════════════════════════════════════════════════
+         PRODUCTS STRIP — Resume Screener
+    ═══════════════════════════════════════════════════ -->
+    <section class="py-24 px-6 bg-[#0b1120] border-t border-white/5" aria-label="Products">
+        <div class="max-w-6xl mx-auto">
+
+            <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-400 text-center mb-4">Theory Solutions // Software Products</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter text-center text-white mb-4">Tools Built In-House.</h2>
+            <p class="text-slate-400 text-sm text-center mb-12 max-w-xl mx-auto">Standalone software products engineered by Theory Solutions. One-time purchase. No subscriptions.</p>
+
+            <div class="max-w-sm mx-auto">
+                <a href="resume-screener.html" class="product-card block p-8 bg-white/5 border border-white/10 rounded-[2rem] text-left" aria-label="Resume Screener product page">
+                    <div class="w-12 h-12 bg-blue-600 rounded-2xl mb-6 flex items-center justify-center text-xl shadow-lg">📋</div>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-blue-400 mb-2 block">Windows Desktop App</span>
+                    <h3 class="text-white font-extrabold text-lg uppercase tracking-tight mb-2">Resume Screener</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed mb-6">Bulk PDF resume screening. Keyword scoring, timeline extraction, CSV export. Runs 100% on your machine — no cloud, no subscription.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-white font-extrabold text-2xl">$39.99</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-blue-400 flex items-center gap-2">View Product <span>→</span></span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════════ -->
+    <section id="contact" class="py-32 px-6 bg-slate-50 border-t border-slate-200" aria-label="Contact">
         <div class="max-w-3xl mx-auto text-center">
             <h2 class="text-5xl font-extrabold text-slate-900 mb-8 tracking-tighter uppercase italic">Scale Your Vision.</h2>
             <p class="text-slate-500 mb-12 font-bold uppercase tracking-widest text-xs italic">Schedule Your Strategic Consultation</p>
-            
-            <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left" aria-label="Contact form">
                 <input type="hidden" name="access_key" value="57dab395-0188-4e79-b0bd-ceaca59b3af2">
                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-                <input type="text" name="name" placeholder="Full Name" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900">
-                <input type="email" name="email" placeholder="Business Email" required class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900">
+                <input type="text" name="name" placeholder="Full Name" required autocomplete="name" class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900">
+                <input type="email" name="email" placeholder="Business Email" required autocomplete="email" class="bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900">
                 <textarea name="message" placeholder="Describe the friction in your current workflow..." required class="md:col-span-2 h-32 bg-white border border-slate-200 p-5 rounded-2xl outline-none focus:border-blue-600 transition shadow-sm text-slate-900"></textarea>
-                
+
                 <div class="md:col-span-2 text-center">
                     <button type="submit" class="w-full py-6 bg-slate-900 text-white font-extrabold uppercase text-sm rounded-2xl hover:bg-blue-600 transition-all shadow-xl tracking-widest mb-4">Launch Strategy Session</button>
                     <p class="text-[10px] text-slate-400 uppercase tracking-tight px-4">
@@ -118,16 +217,20 @@
         </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════ -->
     <footer class="py-16 text-center text-[10px] font-bold uppercase tracking-[0.4em] text-slate-500 bg-slate-900">
         <div class="mb-6 opacity-80">Theory Solutions // Arizona Enterprise Architecture // © 2026</div>
         <div class="tracking-[0.15em] opacity-60 leading-relaxed mb-8 px-6">
             Theory Solutions is an industrial communication brand operated by<br>
             <strong>ENVIOUSTHEORY STUDIOS LLC</strong><br>
             Tucson, Arizona<br><br>
-            <div class="flex justify-center gap-6 mt-4">
+            <nav class="flex justify-center flex-wrap gap-6 mt-4" aria-label="Footer navigation">
                 <a href="privacy.html" class="hover:text-white transition-colors border-b border-slate-700">Terms & Privacy</a>
                 <a href="estimator.html" class="hover:text-white transition-colors border-b border-slate-700">Project Estimator</a>
-            </div>
+                <a href="resume-screener.html" class="hover:text-white transition-colors border-b border-slate-700">Resume Screener</a>
+            </nav>
         </div>
     </footer>
 
